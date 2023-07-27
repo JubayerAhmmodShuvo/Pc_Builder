@@ -2,10 +2,11 @@
     width: 30%;
     height: 350px;
     border-radius: 10px;
-    background: hsl(209, 52%, 75%);
+    background: hsla(184, 85%, 50%, 0.404);
     margin: 13% auto;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 0 22px 0 rgba(230, 162, 16, 0.452);
     
     color: rgb(10, 1, 1)
 }

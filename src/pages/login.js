@@ -14,7 +14,7 @@ const LoginPage = () => {
         <title>PCBuilder | Login</title>
       </Head>
       <div className={styles.form}>
-        <h3 className="mt-9 text-2xl text-red-800">LOGIN</h3>
+        <h3 className="mt-9 text-2xl text-amber-700">LOGIN</h3>
         <div className={styles.social_icons}>
           <div
             className="cursor-pointer border"

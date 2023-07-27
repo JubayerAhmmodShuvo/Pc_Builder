@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="navbar bg-base-100  "
+        className="navbar bg-base-100   "
         style={{ color: "black", padding: "0" }}
       >
         <div className="navbar-start">
@@ -211,7 +211,6 @@ const Navbar = () => {
             <button
               className=" btn btn-error   font-serif "
               onClick={() => signOut()}
-            
             >
               Logout
             </button>
