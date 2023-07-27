@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 
 const Navbar = () => {
+   const { data: session } = useSession();
   return (
     <>
       <div
@@ -125,7 +127,13 @@ const Navbar = () => {
             </li>
             <li tabIndex={0}>
               <details>
-                <summary style={{ textDecoration: "none", color: "black" }}>
+                <summary
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    backgroundColor: "",
+                  }}
+                >
                   Categories
                 </summary>
                 <ul className="p-2">
@@ -195,14 +203,26 @@ const Navbar = () => {
             href="/pc-builder "
             style={{ textDecoration: "none", marginRight: "5px" }}
           >
-            <items className="btn btn-info  text-lg font-serif  ">
-              PC-Builder
-            </items>
+            <items className="btn btn-info   font-serif  ">PC-Builder</items>
           </Link>
         </div>
-        <Link href="/login" style={{ textDecoration: "none" }}>
-          <items className=" btn btn-info  text-lg font-serif text-black">Login</items>
-        </Link>
+        {session?.user ? (
+          <items>
+            <button
+              className=" btn btn-error   font-serif "
+              onClick={() => signOut()}
+            
+            >
+              Logout
+            </button>
+          </items>
+        ) : (
+          <Link href="/login" style={{ textDecoration: "none" }}>
+            <items className=" btn btn-info   font-serif text-black">
+              Login
+            </items>
+          </Link>
+        )}
       </div>
     </>
   );
