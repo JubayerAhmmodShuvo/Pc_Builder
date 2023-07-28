@@ -7,10 +7,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: ["group", "group-hover"],
+    },
   },
   daisyui: {
-    themes: [ 
+    themes: [
       {
         pctheme: {
           primary: "#3b82f6",
@@ -20,8 +22,6 @@ module.exports = {
           accent: "#1FB2A6",
 
           neutral: "#191D24",
-
-          
 
           info: "#3ABFF8",
 

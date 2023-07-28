@@ -69,7 +69,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/powersupply "
+                      href="/power-supply-unit "
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <items>Power Supply Unit</items>
@@ -77,7 +77,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/storage "
+                      href="/storage-device "
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <items>Storage Device</items>
@@ -163,7 +163,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/powersupply "
+                      href="/power-supply-unit "
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Power Supply Unit</items>
@@ -171,7 +171,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/storage "
+                      href="/storage-device "
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Storage Device</items>

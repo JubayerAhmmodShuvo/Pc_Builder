@@ -1,4 +1,4 @@
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const featuredCategories = [
@@ -11,18 +11,71 @@ const featuredCategories = [
   { name: "Others", route: "others" },
 ];
 
+const cardColors = {
+  "CPU / Processor": "bg-blue-200",
+  Motherboard: "bg-green-200",
+  RAM: "bg-yellow-200",
+  "Power Supply Unit": "bg-red-200",
+  "Storage Device": "bg-purple-200",
+  Monitor: "bg-pink-200",
+  Others: "bg-indigo-200",
+};
+
+const hoverColors = {
+  "CPU / Processor": "bg-blue-400",
+  Motherboard: "bg-green-400",
+  RAM: "bg-yellow-400",
+  "Power Supply Unit": "bg-red-400",
+  "Storage Device": "bg-purple-400",
+  Monitor: "bg-pink-400",
+  Others: "bg-indigo-400",
+};
+
 const Featured = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+
   return (
-    <div>
-      <h1>Featured Categories</h1>
-      <div className="category-grid">
-        {featuredCategories.map((category) => (
-          <Link key={category.route} href={`/featured/${category.route}`}>
-            <p className="category-card">
-              <h2>{category.name}</h2>
-            </p>
-          </Link>
-        ))}
+    <div  >
+      <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
+        Featured Categories
+      </h1>
+      <div className="grid lg:grid-cols-3 items-center justify-center gap-y-8 lg:ml-10 my-20 ">
+        {featuredCategories.map((category) =>
+          isClient ? (
+            <Link className="no-underline" key={category.route} href={`/featured/${category.route}`}>
+              <div
+                className={`group card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
+                  cardColors[category.name]
+                }`}
+              >
+                <div
+                  className={`group-hover:${
+                    hoverColors[category.name]
+                  } transition-colors duration-300 w-full h-full flex items-center justify-center hover:text-red-800`}
+                >
+                  <h2 className="text-2xl font-serif font-bold">
+                    {category.name}
+                  </h2>
+                </div>
+              </div>
+            </Link>
+            
+          ) : (
+            <div
+              key={category.route}
+              className={`card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
+                cardColors[category.name]
+              }`}
+            >
+              <h2 className="text-xl font-bold">{category.name}</h2>
+            </div>
+          )
+        )}
       </div>
     </div>
   );
