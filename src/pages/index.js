@@ -1,10 +1,20 @@
 import Banner from "@/components/UI/Banner";
 import Card from "@/components/UI/Card";
+import Head from "next/head";
 
 
 export default function Home({ featuredProducts }) {
   return (
     <>
+      <Head>
+        <title>PC_Builder | Home</title>
+        <meta
+          name="description"
+          content="This is pc builder homepage made by next-js"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/public/favicon.ico" />
+      </Head>
       <Banner />
 
       <h1 className="text-4xl text-center font-serif font-bold my-12  underline text-fuchsia-500">
