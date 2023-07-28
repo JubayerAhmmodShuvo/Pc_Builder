@@ -1,4 +1,4 @@
-import Card from "@/components/UI/Cars";
+import Card from "@/components/UI/Card";
 
 
 const Ram = ({ products }) => {
