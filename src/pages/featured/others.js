@@ -6,7 +6,7 @@ const Others = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Others</title>
+        <title>PC_Builder | Featured | Others</title>
         <meta
           name="description"
           content="This is featured page Others made by next-js"

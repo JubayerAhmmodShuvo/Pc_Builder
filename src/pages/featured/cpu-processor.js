@@ -6,7 +6,7 @@ const CPUProcessor = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | CPUProcessor</title>
+        <title>PC_Builder | Featured | CPUProcessor</title>
         <meta
           name="description"
           content="This is featured page cpuprocessor made by next-js"

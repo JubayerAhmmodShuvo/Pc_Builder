@@ -7,7 +7,7 @@ const PowerSupplyUnit = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | PowerSupply</title>
+        <title>PC_Builder | Featured | PowerSupply</title>
         <meta
           name="description"
           content="This is featured page powersupply made by next-js"

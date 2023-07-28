@@ -6,7 +6,7 @@ const Monitor = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Monitor</title>
+        <title>PC_Builder | Featured | Monitor</title>
         <meta
           name="description"
           content="This is featured page monitor made by next-js"

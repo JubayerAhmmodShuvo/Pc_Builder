@@ -6,7 +6,7 @@ const Motherboard = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | MohterBoard</title>
+        <title>PC_Builder | Featured | MohterBoard</title>
         <meta
           name="description"
           content="This is featured page MohterBoard made by next-js"

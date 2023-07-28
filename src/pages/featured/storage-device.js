@@ -5,7 +5,7 @@ const StorageDevice = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | StorageDevice</title>
+        <title>PC_Builder | Featured | StorageDevice</title>
         <meta
           name="description"
           content="This is featured page StorageDevice made by next-js"
