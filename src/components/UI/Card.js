@@ -39,7 +39,7 @@ const Card = ({ product }) => {
         key={product._id}
       >
         <div
-          className={`card w-96  min-h-screen  text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
+          className={`card w-96    text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
         >
           <img
             src={product.image}

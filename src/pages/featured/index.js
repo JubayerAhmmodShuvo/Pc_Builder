@@ -12,24 +12,42 @@ const featuredCategories = [
   { name: "Others", route: "others" },
 ];
 
-const cardColors = {
-  "CPU / Processor": "bg-blue-200",
-  Motherboard: "bg-green-200",
-  RAM: "bg-yellow-200",
-  "Power Supply Unit": "bg-red-200",
-  "Storage Device": "bg-purple-200",
-  Monitor: "bg-pink-200",
-  Others: "bg-indigo-200",
-};
+const colorOptions = [
+  "bg-blue-300",
+  "bg-green-300",
+  "bg-yellow-300",
+  "bg-red-300",
+  "bg-purple-300",
+  "bg-pink-300",
+  "bg-indigo-300",
+  "bg-orange-300",
+  "bg-teal-300",
+  "bg-cyan-300",
+  "bg-lime-300",
+  "bg-emerald-300",
+  "bg-amber-300",
+  "bg-fuchsia-300",
+  "bg-rose-300",
+  "bg-lightblue-300",
+  "bg-lightgreen-300",
+  "bg-deepskyblue-300",
+  "bg-deeppink-300",
+  "bg-tomato-300",
+];
 
-const hoverColors = {
-  "CPU / Processor": "bg-blue-400",
-  Motherboard: "bg-green-400",
-  RAM: "bg-yellow-400",
-  "Power Supply Unit": "bg-red-400",
-  "Storage Device": "bg-purple-400",
-  Monitor: "bg-pink-400",
-  Others: "bg-indigo-400",
+const hoverOptions = [
+  "bg-blue-400",
+  "bg-green-400",
+  "bg-yellow-400",
+  "bg-red-400",
+  "bg-purple-400",
+  "bg-pink-400",
+  "bg-indigo-400",
+];
+
+const getRandomColor = (options) => {
+  const randomIndex = Math.floor(Math.random() * options.length);
+  return options[randomIndex];
 };
 
 const Featured = () => {
@@ -38,7 +56,6 @@ const Featured = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
 
   return (
     <div>
@@ -64,14 +81,14 @@ const Featured = () => {
                 href={`/featured/${category.route}`}
               >
                 <div
-                  className={`group card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
-                    cardColors[category.name]
-                  }`}
+                  className={`group card w-96 h-48 text-black flex items-center justify-center shadow-xl ${getRandomColor(
+                    colorOptions
+                  )}`}
                 >
                   <div
-                    className={`group-hover:${
-                      hoverColors[category.name]
-                    } transition-colors duration-300 w-full h-full flex items-center justify-center hover:text-red-800`}
+                    className={`group-hover:${getRandomColor(
+                      hoverOptions
+                    )} transition-colors duration-300 w-full h-full flex items-center justify-center hover:text-red-800`}
                   >
                     <h2 className="text-2xl font-serif font-bold">
                       {category.name}
@@ -82,9 +99,9 @@ const Featured = () => {
             ) : (
               <div
                 key={category.route}
-                className={`card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
-                  cardColors[category.name]
-                }`}
+                className={`card w-96 h-48 text-black flex items-center justify-center shadow-xl ${getRandomColor(
+                  colorOptions
+                )}`}
               >
                 <h2 className="text-xl font-bold">{category.name}</h2>
               </div>
