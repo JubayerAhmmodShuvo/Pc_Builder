@@ -40,42 +40,47 @@ const Featured = () => {
 
 
   return (
-    <div  >
+    <div >
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
         Featured Categories
       </h1>
-      <div className="grid lg:grid-cols-3 items-center justify-center gap-y-8 lg:ml-10 my-20 ">
-        {featuredCategories.map((category) =>
-          isClient ? (
-            <Link className="no-underline" key={category.route} href={`/featured/${category.route}`}>
+      <div className="flex items-center justify-center">
+        <div className="grid lg:grid-cols-3 gap-8  lg:ml-10 my-20 ">
+          {featuredCategories.map((category) =>
+            isClient ? (
+              <Link
+                className="no-underline"
+                key={category.route}
+                href={`/featured/${category.route}`}
+              >
+                <div
+                  className={`group card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
+                    cardColors[category.name]
+                  }`}
+                >
+                  <div
+                    className={`group-hover:${
+                      hoverColors[category.name]
+                    } transition-colors duration-300 w-full h-full flex items-center justify-center hover:text-red-800`}
+                  >
+                    <h2 className="text-2xl font-serif font-bold">
+                      {category.name}
+                    </h2>
+                  </div>
+                </div>
+              </Link>
+            ) : (
               <div
-                className={`group card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
+                key={category.route}
+                className={`card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
                   cardColors[category.name]
                 }`}
               >
-                <div
-                  className={`group-hover:${
-                    hoverColors[category.name]
-                  } transition-colors duration-300 w-full h-full flex items-center justify-center hover:text-red-800`}
-                >
-                  <h2 className="text-2xl font-serif font-bold">
-                    {category.name}
-                  </h2>
-                </div>
+                <h2 className="text-xl font-bold">{category.name}</h2>
               </div>
-            </Link>
-            
-          ) : (
-            <div
-              key={category.route}
-              className={`card w-96 h-48 text-black flex items-center justify-center shadow-xl ${
-                cardColors[category.name]
-              }`}
-            >
-              <h2 className="text-xl font-bold">{category.name}</h2>
-            </div>
-          )
-        )}
+            )
+          )}
+        </div>
       </div>
     </div>
   );

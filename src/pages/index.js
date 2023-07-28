@@ -4,6 +4,10 @@ export default function Home({ featuredProducts }) {
   return (
     <>
       <Banner />
+
+      <h1 className="text-4xl text-center font-serif font-bold my-12  underline text-fuchsia-500">
+        Featured Product
+      </h1>
       <div className="flex justify-center my-12">
         <div className="grid lg:grid-cols-3 gap-4">
           {featuredProducts.map((product) => (
