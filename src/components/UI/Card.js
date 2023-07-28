@@ -18,14 +18,13 @@ const Card = ({ product }) => {
 
   return (
     <div className="mb-10">
-   
       <Link
         className="no-underline  "
         href={`/products/${product._id}`}
         key={product._id}
       >
         <div
-          className={`card w-96 px-8 h-full py-5 text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
+          className={`card w-96 px-8 max-h-screen py-5 text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
         >
           <img
             src={product.image}
@@ -39,17 +38,20 @@ const Card = ({ product }) => {
 
           <p className="text-lg font-bold mt-1">${product.price.toFixed(2)}</p>
 
-          <p
-            className={`mt-1 ${
-              product.status === "In Stock" ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {product.status}
-          </p>
-
-          <div className="flex items-center mt-1">
-            <span className="text-yellow-500 mr-1">★</span>
-            <span>{product.rating}</span>
+          <div className="flex justify-between">
+            <p
+              className={`mt-1 ${
+                product.status === "In Stock"
+                  ? "text-green-600"
+                  : "text-red-600"
+              }`}
+            >
+              {product.status}
+            </p>
+            <div className=" mt-1 ">
+              <span className="text-yellow-500   mr-1">★</span>
+              <span className="text-lg">{product.rating}</span>
+            </div>
           </div>
         </div>
       </Link>
