@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="navbar bg-base-100   "
+        className="navbar bg-base-100 z-20  "
         style={{ color: "black", padding: "0" }}
       >
         <div className="navbar-start">
@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a>Categories</a>
-                <ul className="p-2">
+                <ul className="p-2 z-20 bg-slate-600">
                   <li>
                     <Link
                       href="/cpu-processor "
@@ -136,11 +136,11 @@ const Navbar = () => {
                 >
                   Categories
                 </summary>
-                <ul className="p-2">
+                <ul className="p-2 z-20 bg-slate-600 ">
                   <li>
                     <Link
                       href="/cpu-processor "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>CPU / Processor</items>
                     </Link>
@@ -148,7 +148,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/motherborad "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>MotherBoard</items>
                     </Link>
@@ -156,7 +156,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/ram "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>RAM</items>
                     </Link>
@@ -164,7 +164,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/powersupply "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Power Supply Unit</items>
                     </Link>
@@ -172,7 +172,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/storage "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Storage Device</items>
                     </Link>
@@ -180,7 +180,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/monitor "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Monitor </items>
                     </Link>
@@ -188,7 +188,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       href="/others "
-                      style={{ textDecoration: "none", color: "black" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Others</items>
                     </Link>
