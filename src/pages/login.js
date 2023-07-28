@@ -20,7 +20,7 @@ const LoginPage = () => {
             className="cursor-pointer border"
             onClick={() =>
               signIn("google", {
-                callbackUrl: "http://localhost:3000/",
+                callbackUrl: "/",
               })
             }
           >
@@ -33,7 +33,7 @@ const LoginPage = () => {
             className="cursor-pointer"
             onClick={() =>
               signIn("github", {
-                callbackUrl: "http://localhost:3000/",
+                callbackUrl: "/",
               })
             }
           >

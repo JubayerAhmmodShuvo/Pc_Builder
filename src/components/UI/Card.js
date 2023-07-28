@@ -39,7 +39,7 @@ const Card = ({ product }) => {
         key={product._id}
       >
         <div
-          className={`card w-96 px-8 max-h-screen py-5 text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
+          className={`card w-96  min-h-screen  text-black shadow-xl cursor-pointer mb-5  ${randomColor}`}
         >
           <img
             src={product.image}
@@ -47,13 +47,15 @@ const Card = ({ product }) => {
             className="w-full h-96 object-cover rounded-md mb-4"
           />
 
-          <h2 className="text-xl font-bold mt-6">{product.name}</h2>
+          <h2 className="text-xl px-6 font-bold mt-6">{product.name}</h2>
 
-          <p className="text-sm text-gray-500 mt-1">{product.category}</p>
+          <p className="text-sm px-6 text-gray-500 mt-1">{product.category}</p>
 
-          <p className="text-lg font-bold mt-1">${product.price.toFixed(2)}</p>
+          <p className="text-lg px-6 font-bold mt-1">
+            ${product.price.toFixed(2)}
+          </p>
 
-          <div className="flex justify-between">
+          <div className="flex px-6 justify-between">
             <p
               className={`mt-1 ${
                 product.status === "In Stock"
