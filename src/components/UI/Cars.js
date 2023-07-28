@@ -25,11 +25,11 @@ const Card = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-72 object-cover rounded-md"
+          className="w-full h-96 object-cover rounded-md mb-4"
         />
 
        
-        <h2 className="text-xl font-bold mt-2">{product.name}</h2>
+        <h2 className="text-xl font-bold mt-6">{product.name}</h2>
 
     
         <p className="text-sm text-gray-500 mt-1">{product.category}</p>
