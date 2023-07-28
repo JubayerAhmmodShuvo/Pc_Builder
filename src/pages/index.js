@@ -13,7 +13,7 @@ export default function Home({ featuredProducts }) {
           content="This is pc builder homepage made by next-js"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="/public/icon.png" />
       </Head>
       <Banner />
 

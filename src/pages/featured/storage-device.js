@@ -1,4 +1,5 @@
 import Card from "@/components/UI/Card";
+import Head from "next/head";
 
 
 const StorageDevice = ({ products }) => {
