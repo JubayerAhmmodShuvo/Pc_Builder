@@ -17,7 +17,7 @@ const Card = ({ product }) => {
   const randomColor = cardColors[randomColorIndex];
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 font-serif">
       <Link
         className="no-underline  "
         href={`/products/${product._id}`}
@@ -49,8 +49,8 @@ const Card = ({ product }) => {
               {product.status}
             </p>
             <div className=" mt-1 ">
-              <span className="text-yellow-500   mr-1">★</span>
-              <span className="text-lg">{product.rating}</span>
+              <span className="text-yellow-500 text-2xl    mr-1">★</span>
+              <span className="text-lg font-bold">{product.rating}</span>
             </div>
           </div>
         </div>
