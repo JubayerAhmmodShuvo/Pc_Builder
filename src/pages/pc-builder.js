@@ -85,6 +85,11 @@ const PCBuilder = ({ initialData }) => {
   );
 };
 
+
+
+
+
+
 const CategorySection = ({ category }) => {
   const { selectedComponents, setSelectedComponents } = usePCBuilderContext();
   const categoryKey = category.toLowerCase().replace(/\s/g, "");
@@ -107,10 +112,15 @@ const CategorySection = ({ category }) => {
     });
   };
 
+  const totalSelectedComponents = Object.values(selectedComponents).reduce(
+    (total, categoryComponents) => total + categoryComponents.length,
+    0
+  );
+
   return (
     <div className="overflow-x-auto">
       <div className="flex lg:flex-row flex-col text-black">
-        {isTableVisible ? (
+        {isTableVisible || totalSelectedComponents >= 6 ? (
           <table className="table text-center">
             <thead>
               <tr className="text-black no-underline">
@@ -120,6 +130,7 @@ const CategorySection = ({ category }) => {
                 <th className="px-4 py-2">Status</th>
                 <th className="px-4 py-2">Rating</th>
                 <th className="px-4 py-2">Actions</th>
+                <th className="px-4 py-2"></th>
               </tr>
             </thead>
             <tbody className="text-center">
@@ -140,11 +151,21 @@ const CategorySection = ({ category }) => {
                   <td className="border px-4 py-2">{component.rating}</td>
                   <td className="border px-4 py-2">
                     <button
-                      className="btn btn-secondary text-white px-2 py-1"
+                      className="btn btn-error text-white px-2 py-1"
                       onClick={() => handleRemoveFromBuilder(component)}
                     >
                       Delete
                     </button>
+                  </td>
+                  <td className="border px-2 py-1">
+                    
+                    <Link
+                      href={`/selecproduct/${category.replace(/\s/g, "-")}`}
+                    >
+                      <button className="btn btn-secondary text-white  hover:text-black hover:bg-green-100 rounded-md">
+                        Select 
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -163,6 +184,7 @@ const CategorySection = ({ category }) => {
     </div>
   );
 };
+
 
 export async function getServerSideProps() {
  
