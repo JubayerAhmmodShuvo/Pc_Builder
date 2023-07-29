@@ -20,7 +20,11 @@ const CPUProcessor = ({ products }) => {
       <div className="flex items-center justify-center my-8 mb-28">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {products.map((product) => (
-            <Card key={product._id} product={product} />
+            <Card
+              key={product._id}
+              product={product}
+             
+            />
           ))}
         </div>
       </div>
@@ -34,7 +38,7 @@ export async function getStaticProps() {
     const allProducts = await res.json();
 
     const cpuProducts = allProducts.filter(
-      (product) => product.category === "CPU / Processor"
+      (product) => product.category === "CPU Processor"
     );
 
     return {

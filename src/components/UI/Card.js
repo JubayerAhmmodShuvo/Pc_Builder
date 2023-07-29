@@ -33,22 +33,24 @@ const Card = ({ product }) => {
   const { data: session } = useSession();
   const router = useRouter();
   const { selectedComponents, setSelectedComponents } = usePCBuilderContext();
-  const handleAddToBuilder = () => {
-    setSelectedComponents((prevSelectedComponents) => {
-      const categoryKey = product.category
-        .toLowerCase()
-        .replace(/\s/g, "-")
-        .replace(/-/g, "");
-      const categoryComponents = prevSelectedComponents[categoryKey] || [];
+ const handleAddToBuilder = () => {
+   setSelectedComponents((prevSelectedComponents) => {
+     const categoryKey = product.category.toLowerCase().replace(/\s/g, "");
+     const categoryComponents = prevSelectedComponents[categoryKey] || [];
+     
+       
 
-      return {
-        ...prevSelectedComponents,
-        [categoryKey]: [...categoryComponents, product],
-      };
-    });
-    alert("Component added to PC Builder.");
-    router.push("/pc-builder");
-  };
+     return {
+       ...prevSelectedComponents,
+       [categoryKey]: [...categoryComponents, product],
+     };
+   });
+
+   alert("Component added to PC Builder.");
+   router.push("/pc-builder");
+ };
+
+
 
   const randomColorIndex = Math.floor(Math.random() * cardColors.length);
   const randomColor = cardColors[randomColorIndex];
@@ -73,8 +75,7 @@ const Card = ({ product }) => {
             <h2 className="text-xl px-6 font-bold mt-6">{product.name}</h2>
 
             <p className="text-sm px-6 text-gray-500 mt-1">
-              {product.category
-              }
+              {product.category}
             </p>
 
             <p className="text-lg px-6 font-bold mt-1">
@@ -98,14 +99,22 @@ const Card = ({ product }) => {
             </div>
           </div>
         </Link>
-        {session?.user && (
-          <button
-            className="btn btn-secondary border-spacing-0 text-white px-4 py-2 rounded-md mt-4"
-            onClick={handleAddToBuilder}
-          >
-            Add to PC Builder
-          </button>
-        )}
+        {session?.user &&
+          (product.status === "In Stock" ? (
+            <button
+              className="btn btn-secondary border-spacing-0 text-white px-4 py-2 rounded-md mt-4"
+              onClick={handleAddToBuilder}
+            >
+              Add to PC Builder
+            </button>
+          ) : (
+            <button
+              className="btn btn-disabled border-spacing-0 text-gray-500 px-4 py-2 rounded-md mt-4"
+              disabled
+            >
+              Out of stock
+            </button>
+          ))}
       </div>
     </div>
   );

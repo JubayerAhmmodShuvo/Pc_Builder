@@ -1,4 +1,3 @@
-
 import { createContext, useState, useContext } from "react";
 
 const PCBuilderContext = createContext();
@@ -8,20 +7,31 @@ export function usePCBuilderContext() {
 }
 
 export function PCBuilderProvider({ children }) {
-const [selectedComponents, setSelectedComponents] = useState({
-  "cpu-processor": [],
-  motherboard: [],
-  ram: [],
-  "power-supply-unit": [],
-  "storage-device": [],
-  monitor: [],
-  others:[]
-});
+  const initialSelectedComponents = {
+    "cpu-processor": [],
+    motherboard: [],
+    ram: [],
+    powersupplyunit: [],
+    storagedevice: [],
+    monitor: [],
+    others: [],
+  };
 
+  const [selectedComponents, setSelectedComponents] = useState(
+    initialSelectedComponents
+  );
+
+  const resetSelectedComponents = () => {
+    setSelectedComponents(initialSelectedComponents);
+  };
 
   return (
     <PCBuilderContext.Provider
-      value={{ selectedComponents, setSelectedComponents }}
+      value={{
+        selectedComponents,
+        setSelectedComponents,
+        resetSelectedComponents,
+      }}
     >
       {children}
     </PCBuilderContext.Provider>
