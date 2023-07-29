@@ -50,7 +50,7 @@ const PCBuilder = ({ initialData }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/icon.png" />
       </Head>
-      <Banner />
+     
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
         PC Builder
       </h1>
