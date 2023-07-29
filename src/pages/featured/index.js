@@ -3,11 +3,11 @@ import Link from "next/link";
 import Head from "next/head";
 
 const featuredCategories = [
-  { name: "CPU / Processor", route: "cpu-processor" },
+  { name: "CPU / Processor", route: "cpuprocessor" },
   { name: "Motherboard", route: "motherboard" },
   { name: "RAM", route: "ram" },
-  { name: "Power Supply Unit", route: "power-supply-unit" },
-  { name: "Storage Device", route: "storage-device" },
+  { name: "Power Supply Unit", route: "powersupplyunit" },
+  { name: "Storage Device", route: "storagedevice" },
   { name: "Monitor", route: "monitor" },
   { name: "Others", route: "others" },
 ];
