@@ -1,11 +1,11 @@
 # PC_Builder FrontEnd
 
 
-## Live Link:()[]
+## Live Link:[https://pc-builder-frontend-ivory.vercel.app/](https://pc-builder-frontend-ivory.vercel.app/)
 
-## FrontEnd_Link: ()[]
+## FrontEnd_GitHub_Link: [https://github.com/JubayerAhmmodShuvo/Pc_Builder](https://github.com/JubayerAhmmodShuvo/Pc_Builder)
 
-## BackEnd_Link: ()[]
+## BackEnd_GitHub_Link: [https://github.com/JubayerAhmmodShuvo/Pc-Builder_Backend](https://github.com/JubayerAhmmodShuvo/Pc-Builder_Backend)
 
 
 ### About the project
