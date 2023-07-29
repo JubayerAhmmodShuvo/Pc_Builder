@@ -20,7 +20,7 @@ const LoginPage = () => {
             className="cursor-pointer border"
             onClick={() =>
               signIn("google", {
-                callbackUrl: "/",
+                callbackUrl: "https://pc-builder-frontend-ivory.vercel.app/",
               })
             }
           >
@@ -33,7 +33,7 @@ const LoginPage = () => {
             className="cursor-pointer"
             onClick={() =>
               signIn("github", {
-                callbackUrl: "/",
+                callbackUrl: "https://pc-builder-frontend-ivory.vercel.app/",
               })
             }
           >
