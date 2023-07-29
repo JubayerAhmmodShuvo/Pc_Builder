@@ -42,7 +42,7 @@ export async function getStaticProps() {
       props: {
         featuredProducts,
       },
-      revalidate: 10, 
+      revalidate: 5, 
     };
   } catch (error) {
     return {
