@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -40,10 +41,12 @@ const SelectedComponentCard = ({ component }) => {
           key={component._id}
         >
           <div>
-            <img
+            <Image
               src={component.image}
               alt={component.name}
               className="w-full h-96 object-cover rounded-md mb-4"
+              width={500}
+              height={500}
             />
 
             <h2 className="text-xl px-6 font-bold mt-6">{component.name}</h2>

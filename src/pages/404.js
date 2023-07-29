@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Error from "../../public/error.jpg"
 
 const ErrorPage = () => {
   const router = useRouter();
@@ -10,11 +11,13 @@ const ErrorPage = () => {
   return (
     <div>
       <Image
-        className="min-h-screen"
-        src="https://hips.hearstapps.com/hmg-prod/images/abstract-glitch-background-404-royalty-free-illustration-1679362904.jpg"
+        className="min-h-screen min-w-screen"
+        src={Error}
         alt=""
-        width={400}
-        height={600}
+        width={1380}
+        height={800}
+     
+        
       />
     </div>
   );

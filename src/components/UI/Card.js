@@ -102,7 +102,7 @@ const Card = ({ product }) => {
         {session?.user &&
           (product.status === "In Stock" ? (
             <button
-              className="btn btn-secondary border-spacing-0 text-white px-4 py-2 rounded-md mt-4"
+              className="btn btn-secondary border-spacing-0 text-white img2 rounded-md mt-4"
               onClick={handleAddToBuilder}
             >
               Add to PC Builder
