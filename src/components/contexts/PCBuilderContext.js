@@ -15,6 +15,7 @@ const [selectedComponents, setSelectedComponents] = useState({
   "power-supply-unit": [],
   "storage-device": [],
   monitor: [],
+  others:[]
 });
 
 

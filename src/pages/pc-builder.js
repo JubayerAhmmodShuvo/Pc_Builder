@@ -23,6 +23,7 @@ const PCBuilder = () => {
     "power-supply-unit",
     "storage-device",
     "monitor",
+    "others"
   ];
 
   return (

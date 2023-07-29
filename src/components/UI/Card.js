@@ -74,9 +74,7 @@ const Card = ({ product }) => {
 
             <p className="text-sm px-6 text-gray-500 mt-1">
               {product.category
-                .toLowerCase()
-                .replace(/\s/g, "-")
-                .replace(/-/g, "")}
+              }
             </p>
 
             <p className="text-lg px-6 font-bold mt-1">
