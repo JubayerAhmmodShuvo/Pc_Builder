@@ -5,6 +5,7 @@
   import Link from "next/link";
 import SelectedComponentCard from "@/components/UI/SelectedComponentCard";
   import { useRouter } from "next/router";
+import Head from "next/head";
 
 
 
