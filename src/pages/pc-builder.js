@@ -89,49 +89,37 @@ const CategorySection = ({ category }) => {
   const { selectedComponents, setSelectedComponents } = usePCBuilderContext();
   const categoryKey = category.toLowerCase().replace(/\s/g, "");
   const categoryComponents = selectedComponents[categoryKey] || [];
-  const [isTableVisible, setIsTableVisible] = useState(false); 
+  const [isTableVisible, setIsTableVisible] = useState(false);
 
   useEffect(() => {
-    setIsTableVisible(categoryComponents.length > 0); 
+    setIsTableVisible(categoryComponents.length > 0);
   }, [categoryComponents]);
 
-  const handleAddToBuilder = (component) => {
-  
+  const handleRemoveFromBuilder = (component) => {
     setSelectedComponents((prevSelectedComponents) => {
-      const existingComponentIndex = categoryComponents.findIndex(
-        (item) => item._id === component._id
+      const updatedComponents = categoryComponents.filter(
+        (item) => item._id !== component._id
       );
-
-      if (existingComponentIndex !== -1) {
-        const updatedComponents = [...categoryComponents];
-        updatedComponents[existingComponentIndex] = component;
-        return {
-          ...prevSelectedComponents,
-          [categoryKey]: updatedComponents,
-        };
-      } else {
-        return {
-          ...prevSelectedComponents,
-          [categoryKey]: [
-            ...(prevSelectedComponents[categoryKey] || []),
-            component,
-          ],
-        };
-      }
+      return {
+        ...prevSelectedComponents,
+        [categoryKey]: updatedComponents,
+      };
     });
   };
 
   return (
     <div className="overflow-x-auto">
       <div className="flex lg:flex-row flex-col text-black">
-        {isTableVisible ? ( 
-          <table className="table text-center  ">  <thead>
-              <tr className="text-black no-underline " >
+        {isTableVisible ? (
+          <table className="table text-center">
+            <thead>
+              <tr className="text-black no-underline">
                 <th className="px-4 py-2">Product Image</th>
                 <th className="px-4 py-2">Product Name</th>
                 <th className="px-4 py-2">Price</th>
                 <th className="px-4 py-2">Status</th>
                 <th className="px-4 py-2">Rating</th>
+                <th className="px-4 py-2">Actions</th>
               </tr>
             </thead>
             <tbody className="text-center">
@@ -150,11 +138,19 @@ const CategorySection = ({ category }) => {
                   </td>
                   <td className="border px-4 py-2">{component.status}</td>
                   <td className="border px-4 py-2">{component.rating}</td>
+                  <td className="border px-4 py-2">
+                    <button
+                      className="btn btn-secondary text-white px-2 py-1"
+                      onClick={() => handleRemoveFromBuilder(component)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
-            </tbody></table>
+            </tbody>
+          </table>
         ) : (
-          
           <div className="flex flex-col items-center justify-center w-full h-full">
             <Link href={`/selecproduct/${category.replace(/\s/g, "-")}`}>
               <div className="btn btn-secondary text-white px-4 py-2 w-36 hover:text-black hover:bg-green-100 rounded-md">

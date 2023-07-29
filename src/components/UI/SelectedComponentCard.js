@@ -2,7 +2,7 @@ import { usePCBuilderContext } from "@/components/contexts/PCBuilderContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const SelectedCopmonentCard = [
+const cardColors = [
   "bg-blue-300",
   "bg-green-300",
   "bg-yellow-300",
@@ -25,8 +25,7 @@ const SelectedCopmonentCard = [
   "bg-tomato-300",
 ];
 
-const Card = ({ product }) => {
-
+const SelectedCopmonentCard = ({ product }) => {
   const router = useRouter();
   const { selectedComponents, setSelectedComponents } = usePCBuilderContext();
   const handleAddToBuilder = () => {
@@ -91,7 +90,6 @@ const Card = ({ product }) => {
             </div>
           </div>
         </Link>
-       
       </div>
     </div>
   );

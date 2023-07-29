@@ -35,7 +35,9 @@ const CPUProcessor = ({ products }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch("http://localhost:3001/api/pc-components");
+    const res = await fetch(
+      "https://pc-builder-backend-gold.vercel.app/api/pc-components"
+    );
     const allProducts = await res.json();
 
     const cpuProducts = allProducts.filter(
