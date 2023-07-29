@@ -1,7 +1,7 @@
 import Banner from "@/components/UI/Banner";
 import Card from "@/components/UI/Card";
 import Head from "next/head";
-
+import { useEffect, useState } from "react";
 
 export default function Home({ featuredProducts }) {
   return (
@@ -33,7 +33,9 @@ export default function Home({ featuredProducts }) {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
+    const res = await fetch(
+      "https://pc-builder-backend-gold.vercel.app/api/pc-components"
+    );
     const allFeaturedProducts = await res.json();
     const featuredProducts = filterFeaturedProducts(allFeaturedProducts);
 
@@ -61,6 +63,15 @@ function filterFeaturedProducts(allProducts) {
       featuredProducts.push(product);
     }
   });
+
+
+  for (let i = featuredProducts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [featuredProducts[i], featuredProducts[j]] = [
+      featuredProducts[j],
+      featuredProducts[i],
+    ];
+  }
 
   return featuredProducts;
 }
