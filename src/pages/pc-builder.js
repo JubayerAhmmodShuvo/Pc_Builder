@@ -156,7 +156,7 @@ const CategorySection = ({ category }) => {
         ) : (
           
           <div className="flex flex-col items-center justify-center w-full h-full">
-            <Link href={`/featured/${category.replace(/\s/g, "-")}`}>
+            <Link href={`/selecproduct/${category.replace(/\s/g, "-")}`}>
               <div className="btn btn-secondary text-white px-4 py-2 w-36 hover:text-black hover:bg-green-100 rounded-md">
                 Select {categoryKey}
               </div>

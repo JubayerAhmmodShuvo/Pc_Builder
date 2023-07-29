@@ -1,5 +1,6 @@
 import Banner from "@/components/UI/Banner";
 import Card from "@/components/UI/Card";
+import SelectedCopmonentCard from "@/components/UI/SelectedComponentCard";
 import Head from "next/head";
 
 export default function Home({ featuredProducts }) {
@@ -22,7 +23,7 @@ export default function Home({ featuredProducts }) {
       <div className="flex justify-center my-12">
         <div className="grid lg:grid-cols-3 gap-4">
           {featuredProducts.map((product) => (
-            <Card key={product._id} product={product} />
+            <SelectedCopmonentCard key={product._id} product={product} />
           ))}
         </div>
       </div>

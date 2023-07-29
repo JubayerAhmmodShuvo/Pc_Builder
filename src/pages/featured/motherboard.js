@@ -1,4 +1,5 @@
 import Card from "@/components/UI/Card";
+import SelectedCopmonentCard from "@/components/UI/SelectedComponentCard";
 import Head from "next/head";
 
 
@@ -20,7 +21,7 @@ const Motherboard = ({ products }) => {
       <div className="flex items-center justify-center my-8 mb-28">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {products.map((product) => (
-            <Card key={product._id} product={product} />
+            <SelectedCopmonentCard key={product._id} product={product} />
           ))}
         </div>
       </div>

@@ -1,24 +1,25 @@
+import Card from "@/components/UI/Card";
 import SelectedCopmonentCard from "@/components/UI/SelectedComponentCard";
 import Head from "next/head";
 
 
-const Monitor = ({ products }) => {
+const StorageDevice = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Featured | Monitor</title>
+        <title>PC_Builder | Featured | StorageDevice</title>
         <meta
           name="description"
-          content="This is featured page monitor made by next-js"
+          content="This is featured page StorageDevice made by next-js"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
-        Category: Monitor
+        Category: Storage Device
       </h1>
       <div className="flex items-center justify-center my-8 mb-28">
-        <div className="grid lg:grid-cols-3 grid-cols-1  gap-4   ">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {products.map((product) => (
             <SelectedCopmonentCard key={product._id} product={product} />
           ))}
@@ -33,12 +34,12 @@ export async function getStaticProps() {
     const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
     const allProducts = await res.json();
 
-    const monitorProducts = allProducts.filter(
-      (product) => product.category === "Monitor"
+    const storageProducts = allProducts.filter(
+      (product) => product.category === "Storage Device"
     );
 
     return {
-      props: { products: monitorProducts },
+      props: { products: storageProducts },
     };
   } catch (error) {
     return {
@@ -47,4 +48,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Monitor;
+export default StorageDevice;

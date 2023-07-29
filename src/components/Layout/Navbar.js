@@ -45,7 +45,7 @@ const Navbar = () => {
                 <ul className="p-2 z-20 bg-slate-600">
                   <li>
                     <Link
-                      href="/featured/cpuprocessor "
+                      href="/featured/cpu-processor "
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <items>CPU / Processor</items>
@@ -69,7 +69,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/featured/powersupplyunit "
+                      href="/featured/power-supply-unit "
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <items>Power Supply Unit</items>
@@ -77,7 +77,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/featured/storagedevice "
+                      href="/featured/storage-device "
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <items>Storage Device</items>
@@ -139,7 +139,7 @@ const Navbar = () => {
                 <ul className="p-2 z-20 bg-slate-600 ">
                   <li>
                     <Link
-                      href="/featured/cpuprocessor "
+                      href="/featured/cpu-processor "
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>CPU / Processor</items>
@@ -163,7 +163,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/featured/powersupplyunit "
+                      href="/featured/power-supply-unit "
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Power Supply Unit</items>
@@ -171,7 +171,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/featured/storagedevice "
+                      href="/featured/storage-device "
                       style={{ textDecoration: "none", color: "white" }}
                     >
                       <items>Storage Device</items>

@@ -2,25 +2,29 @@ import Card from "@/components/UI/Card";
 import Head from "next/head";
 
 
-const StorageDevice = ({ products }) => {
+const CPUProcessor = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Featured | StorageDevice</title>
+        <title>PC_Builder | Featured | CPUProcessor</title>
         <meta
           name="description"
-          content="This is featured page StorageDevice made by next-js"
+          content="This is featured page cpuprocessor made by next-js"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
-        Category: Storage Device
+        Category: CPU / Processor
       </h1>
       <div className="flex items-center justify-center my-8 mb-28">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {products.map((product) => (
-            <Card key={product._id} product={product} />
+            <Card
+              key={product._id}
+              product={product}
+             
+            />
           ))}
         </div>
       </div>
@@ -28,17 +32,19 @@ const StorageDevice = ({ products }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
-    const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
+    const res = await fetch(
+      "https://pc-builder-backend-gold.vercel.app/api/pc-components"
+    );
     const allProducts = await res.json();
 
-    const storageProducts = allProducts.filter(
-      (product) => product.category === "Storage Device"
+    const cpuProducts = allProducts.filter(
+      (product) => product.category === "CPU Processor"
     );
 
     return {
-      props: { products: storageProducts },
+      props: { products: cpuProducts },
     };
   } catch (error) {
     return {
@@ -47,4 +53,4 @@ export async function getStaticProps() {
   }
 }
 
-export default StorageDevice;
+export default CPUProcessor;

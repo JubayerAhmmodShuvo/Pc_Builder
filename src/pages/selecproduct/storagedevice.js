@@ -2,21 +2,20 @@ import Card from "@/components/UI/Card";
 import Head from "next/head";
 
 
-
-const PowerSupplyUnit = ({ products }) => {
+const StorageDevice = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Featured | PowerSupply</title>
+        <title>PC_Builder | Featured | StorageDevice</title>
         <meta
           name="description"
-          content="This is featured page powersupply made by next-js"
+          content="This is featured page StorageDevice made by next-js"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
-        Category: Power Supply Unit
+        Category: Storage Device
       </h1>
       <div className="flex items-center justify-center my-8 mb-28">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
@@ -29,17 +28,17 @@ const PowerSupplyUnit = ({ products }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
     const allProducts = await res.json();
 
-    const psuProducts = allProducts.filter(
-      (product) => product.category === "Power Supply Unit"
+    const storageProducts = allProducts.filter(
+      (product) => product.category === "Storage Device"
     );
 
     return {
-      props: { products: psuProducts },
+      props: { products: storageProducts },
     };
   } catch (error) {
     return {
@@ -48,4 +47,4 @@ export async function getStaticProps() {
   }
 }
 
-export default PowerSupplyUnit;
+export default StorageDevice;

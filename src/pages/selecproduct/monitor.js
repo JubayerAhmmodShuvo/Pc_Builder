@@ -2,29 +2,25 @@ import Card from "@/components/UI/Card";
 import Head from "next/head";
 
 
-const CPUProcessor = ({ products }) => {
+const Monitor = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>PC_Builder | Featured | CPUProcessor</title>
+        <title>PC_Builder | Featured | Monitor</title>
         <meta
           name="description"
-          content="This is featured page cpuprocessor made by next-js"
+          content="This is featured page monitor made by next-js"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
-        Category: CPU / Processor
+        Category: Monitor
       </h1>
       <div className="flex items-center justify-center my-8 mb-28">
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 grid-cols-1  gap-4   ">
           {products.map((product) => (
-            <Card
-              key={product._id}
-              product={product}
-             
-            />
+            <Card key={product._id} product={product} />
           ))}
         </div>
       </div>
@@ -32,17 +28,19 @@ const CPUProcessor = ({ products }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
-    const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
+    const res = await fetch(
+      "https://pc-builder-backend-gold.vercel.app/api/pc-components"
+    );
     const allProducts = await res.json();
 
-    const cpuProducts = allProducts.filter(
-      (product) => product.category === "CPU Processor"
+    const monitorProducts = allProducts.filter(
+      (product) => product.category === "Monitor"
     );
 
     return {
-      props: { products: cpuProducts },
+      props: { products: monitorProducts },
     };
   } catch (error) {
     return {
@@ -51,4 +49,4 @@ export async function getStaticProps() {
   }
 }
 
-export default CPUProcessor;
+export default Monitor;

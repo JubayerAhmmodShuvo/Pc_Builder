@@ -1,5 +1,4 @@
 import Card from "@/components/UI/Card";
-import SelectedCopmonentCard from "@/components/UI/SelectedComponentCard";
 import Head from "next/head";
 
 
@@ -21,7 +20,7 @@ const Others = ({ products }) => {
       <div className="flex items-center justify-center my-8 mb-28">
         <div className="grid lg:grid-cols-3 grid-cols-1  gap-4  ">
           {products.map((product) => (
-            <SelectedCopmonentCard key={product._id} product={product} />
+            <Card key={product._id} product={product} />
           ))}
         </div>
       </div>
@@ -29,9 +28,11 @@ const Others = ({ products }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
-    const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
+    const res = await fetch(
+      "https://pc-builder-backend-gold.vercel.app/api/pc-components"
+    );
     const allProducts = await res.json();
 
     const othersProducts = allProducts.filter(
