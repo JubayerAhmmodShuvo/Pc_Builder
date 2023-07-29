@@ -33,7 +33,7 @@ export default function Home({ featuredProducts }) {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch("http://localhost:3001/api/pc-components");
+    const res = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
     const allFeaturedProducts = await res.json();
     const featuredProducts = filterFeaturedProducts(allFeaturedProducts);
 

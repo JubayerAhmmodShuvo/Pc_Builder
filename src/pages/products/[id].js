@@ -18,7 +18,7 @@ const ProductDetail = ({ product }) => {
 
   const fetchProductData = async () => {
     try {
-      const res = await fetch(`http://localhost:3001/api/pc-components/${id}`);
+      const res = await fetch(`https://pc-builder-backend-gold.vercel.app/api/pc-components/${id}`);
       const data = await res.json();
       setProductData(data);
     } catch (error) {
@@ -120,7 +120,7 @@ const cardColors = [
 export async function getServerSideProps({ params }) {
   try {
     const { id } = params;
-    const res = await fetch(`http://localhost:3001/api/pc-components/${id}`);
+    const res = await fetch(`https://pc-builder-backend-gold.vercel.app/api/pc-components/${id}`);
     const product = await res.json();
 
     return {

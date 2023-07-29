@@ -8,10 +8,11 @@ import SelectedComponentCard from "@/components/UI/SelectedComponentCard";
 
 
 
-const PCBuilder = () => {
+const PCBuilder = ({ initialData }) => {
+  
   const router = useRouter();
+    const [selecteComponents, setSelectedComponents] = useState({});
   const { selectedComponents, resetSelectedComponents } = usePCBuilderContext();
-  console.log(selectedComponents);
 
   const totalSelectedComponents = Object.values(selectedComponents).reduce(
     (total, categoryComponents) => total + categoryComponents.length,
@@ -38,16 +39,24 @@ const PCBuilder = () => {
   ];
 
   return (
-    <div  >
+    <div>
       <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
         PC Builder
       </h1>
 
       {categories.map((category) => (
-        <div key={category} className="mb-8 text-secondary uppercase font-serif text-center  m-4 ">
+        <div
+          key={category}
+          className="mb-8 text-secondary uppercase font-serif text-center  m-4 "
+        >
           <h2 className="text-xl font-bold">{category}</h2>
           <div className="grid lg:grid-cols-1 grid-cols-1 gap-4">
-            <CategorySection category={category} />
+            <CategorySection
+              category={category}
+              selectedComponents={selectedComponents}
+              setSelectedComponents={setSelectedComponents}
+              initialData={initialData[category.toLowerCase()]}
+            />
           </div>
         </div>
       ))}
@@ -76,7 +85,7 @@ const CategorySection = ({ category }) => {
   }, [categoryComponents]);
 
   const handleAddToBuilder = (component) => {
-    console.log(component);
+  
     setSelectedComponents((prevSelectedComponents) => {
       const existingComponentIndex = categoryComponents.findIndex(
         (item) => item._id === component._id
@@ -147,6 +156,19 @@ const CategorySection = ({ category }) => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+ 
+  const response = await fetch("https://pc-builder-backend-gold.vercel.app/api/pc-components");
+  const initialData = await response.json();
+
+
+  return {
+    props: {
+      initialData,
+    },
+  };
+}
 
 
 export default PCBuilder;
