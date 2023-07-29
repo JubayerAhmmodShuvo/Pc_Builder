@@ -1,7 +1,6 @@
 import Banner from "@/components/UI/Banner";
 import Card from "@/components/UI/Card";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 export default function Home({ featuredProducts }) {
   return (
@@ -43,6 +42,7 @@ export async function getStaticProps() {
       props: {
         featuredProducts,
       },
+      revalidate: 10, 
     };
   } catch (error) {
     return {
@@ -63,7 +63,6 @@ function filterFeaturedProducts(allProducts) {
       featuredProducts.push(product);
     }
   });
-
 
   for (let i = featuredProducts.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
