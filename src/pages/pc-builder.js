@@ -36,43 +36,48 @@ const PCBuilder = ({ initialData }) => {
   ];
 
   return (
-    <div>
-      <Head>
-        <title>PC_Builder | PC_Builder</title>
-        <meta name="description" content="This is pc builder page by next-js" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/public/icon.png" />
-      </Head>
+    <div className="container mx-auto">
+      <div className="container">
+        <Head>
+          <title>PC_Builder | PC_Builder</title>
+          <meta
+            name="description"
+            content="This is pc builder page by next-js"
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/public/icon.png" />
+        </Head>
 
-      <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
-        PC Builder
-      </h1>
+        <h1 className="text-3xl text-sky-600 font-bold font-serif mb-8 text-center">
+          PC Builder
+        </h1>
 
-      {categories.map((category) => (
-        <div
-          key={category}
-          className="mb-8 text-secondary uppercase font-serif text-center  m-4 "
-        >
-          <h2 className="text-xl font-bold">{category}</h2>
-          <div className="grid lg:grid-cols-1 grid-cols-1 gap-4">
-            <CategorySection
-              category={category}
-              selectedComponents={selectedComponents}
-              setSelectedComponents={setSelectedComponents}
-              initialData={initialData[category.toLowerCase()]}
-            />
+        {categories.map((category) => (
+          <div
+            key={category}
+            className="mb-8 text-secondary uppercase font-serif   m-4 "
+          >
+            <h2 className="text-xl font-bold text-start ">{category}</h2>
+            <div className="grid lg:grid-cols-1 grid-cols-1 gap-4 text-end ">
+              <CategorySection
+                category={category}
+                selectedComponents={selectedComponents}
+                setSelectedComponents={setSelectedComponents}
+                initialData={initialData[category.toLowerCase()]}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      <div className="flex justify-center mt-8">
-        <button
-          className="btn btn-secondary text-white px-4 py-2 rounded-md my-5 mb-10"
-          disabled={totalSelectedComponents < 6}
-          onClick={handleCompleteBuild}
-        >
-          Complete Build
-        </button>
+        <div className="flex justify-center mt-8">
+          <button
+            className="btn btn-secondary text-white px-4 py-2 rounded-md my-5 mb-10"
+            disabled={totalSelectedComponents < 6}
+            onClick={handleCompleteBuild}
+          >
+            Complete Build
+          </button>
+        </div>
       </div>
     </div>
   );

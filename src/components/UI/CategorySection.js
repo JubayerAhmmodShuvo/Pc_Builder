@@ -14,7 +14,7 @@ const CategorySection = ({ category }) => {
   }, [categoryComponents]);
 
   useEffect(() => {
-    // Set the last added product ID when a new product is added to the category
+    
     if (categoryComponents.length > 0) {
       setLastAddedProductId(
         categoryComponents[categoryComponents.length - 1]._id
